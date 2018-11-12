@@ -29,12 +29,36 @@ class LinkedList(object):
     def size(self): # time complexity is 0(1), because was store references
         return self.size
 
-    def size2(self):#time complexity 0(n)
+    def size2(self):#runtime complexity 0(n)
         while Node is not None:
             size +=1
             currentlNode = currentNode.nextNode  
+        return size   
 
-        return size    
+    def insertEnd(self, data):
+        self.size +=1
+        newNode=Node(data)   
+        currentNode = self.head
+
+# looking for the end of the LL
+        while currentNode.next != None:
+            currentNode = currentNode.nextNode
+# when we find a last node(means that currentNode.nextNode =0)
+# refer newNode as a new last Node
+        currentNode.nextNode = newNode  
+
+# runtime complexity 0(n)
+
+    def traverseList(self):
+        currentNode = self.head
+
+        while currentNode is not None:
+            print(currentNode.data)
+            currentNode=currentNode.nextNode
+
+
+
+
 
 
 
